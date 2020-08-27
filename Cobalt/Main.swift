@@ -9,8 +9,10 @@
 import Foundation
 import CoreMediaIO
 
-@_cdecl("cobaltMain")
-public func cobaltMain(allocator: CFAllocator, requestedTypeUUID: CFUUID) -> CMIOHardwarePlugInRef{
-    NSLog("cobaltMain")
+
+/// this is the main entry point of the plugin
+
+@_cdecl("CobaltMain")
+public func CobaltMain(allocator: CFAllocator, requestedTypeUUID: CFUUID) -> CMIOHardwarePlugInRef{
     return pluginRef
 }

@@ -9,6 +9,7 @@
 import Foundation
 import IOKit
 
+/// this mocks an actual device
 class Device: Object {
     var objectID: CMIOObjectID = 0
     var streamID: CMIOStreamID = 0

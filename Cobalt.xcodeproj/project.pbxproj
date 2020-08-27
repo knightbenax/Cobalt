@@ -14,10 +14,12 @@
 		EF530E9524F7C61D00D3EC89 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9424F7C61D00D3EC89 /* Object.swift */; };
 		EF530E9724F7C63B00D3EC89 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9624F7C63B00D3EC89 /* Property.swift */; };
 		EF530E9A24F7C85600D3EC89 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9924F7C85600D3EC89 /* Plugin.swift */; };
-		EF530E9C24F7C88400D3EC89 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9B24F7C88400D3EC89 /* Stream.swift */; };
 		EF530E9F24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9E24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift */; };
 		EF530EA224F7CA4E00D3EC89 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530EA124F7CA4E00D3EC89 /* Log.swift */; };
 		EF530EA424F7CAD600D3EC89 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF530EA324F7CAD600D3EC89 /* Asset.xcassets */; };
+		EFEFACEE24F7F55D009D96F6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEFACED24F7F55C009D96F6 /* AppKit.framework */; };
+		EFEFACF024F7F56F009D96F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEFACEF24F7F56E009D96F6 /* CoreGraphics.framework */; };
+		EFEFACF224F7F7D8009D96F6 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEFACF124F7F7D8009D96F6 /* Stream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +33,12 @@
 		EF530E9424F7C61D00D3EC89 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		EF530E9624F7C63B00D3EC89 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		EF530E9924F7C85600D3EC89 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
-		EF530E9B24F7C88400D3EC89 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		EF530E9E24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Create.swift"; sourceTree = "<group>"; };
 		EF530EA124F7CA4E00D3EC89 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		EF530EA324F7CAD600D3EC89 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		EFEFACED24F7F55C009D96F6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EFEFACEF24F7F56E009D96F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EFEFACF124F7F7D8009D96F6 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFEFACF024F7F56F009D96F6 /* CoreGraphics.framework in Frameworks */,
 				EF530E8B24F7C1FF00D3EC89 /* CoreMediaIO.framework in Frameworks */,
+				EFEFACEE24F7F55D009D96F6 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +75,8 @@
 		EF530E8224F7C1D500D3EC89 /* Cobalt */ = {
 			isa = PBXGroup;
 			children = (
-				EF530E9D24F7C9C500D3EC89 /* Extensions */,
-				EF530E8F24F7C30100D3EC89 /* Util */,
+				EFEFAD2124F85535009D96F6 /* Util */,
+				EFEFAD2024F83D9C009D96F6 /* Extensions */,
 				EF530E8324F7C1D500D3EC89 /* Info.plist */,
 				EF530E8D24F7C2F000D3EC89 /* Main.swift */,
 				EF530E9024F7C53700D3EC89 /* PluginInterface.swift */,
@@ -84,29 +90,31 @@
 		EF530E8924F7C1FF00D3EC89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFEFACEF24F7F56E009D96F6 /* CoreGraphics.framework */,
+				EFEFACED24F7F55C009D96F6 /* AppKit.framework */,
 				EF530E8A24F7C1FF00D3EC89 /* CoreMediaIO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EF530E8F24F7C30100D3EC89 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				EF530E9224F7C5E200D3EC89 /* Device.swift */,
-				EF530E9424F7C61D00D3EC89 /* Object.swift */,
-				EF530E9624F7C63B00D3EC89 /* Property.swift */,
-				EF530E9B24F7C88400D3EC89 /* Stream.swift */,
-				EF530EA124F7CA4E00D3EC89 /* Log.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		EF530E9D24F7C9C500D3EC89 /* Extensions */ = {
+		EFEFAD2024F83D9C009D96F6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				EF530E9E24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFEFAD2124F85535009D96F6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EF530E9224F7C5E200D3EC89 /* Device.swift */,
+				EF530E9424F7C61D00D3EC89 /* Object.swift */,
+				EF530E9624F7C63B00D3EC89 /* Property.swift */,
+				EF530EA124F7CA4E00D3EC89 /* Log.swift */,
+				EFEFACF124F7F7D8009D96F6 /* Stream.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +193,8 @@
 				EF530E9124F7C53700D3EC89 /* PluginInterface.swift in Sources */,
 				EF530E9524F7C61D00D3EC89 /* Object.swift in Sources */,
 				EF530E9F24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift in Sources */,
+				EFEFACF224F7F7D8009D96F6 /* Stream.swift in Sources */,
 				EF530E8E24F7C2F000D3EC89 /* Main.swift in Sources */,
-				EF530E9C24F7C88400D3EC89 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +314,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = Cobalt/Asset.xcassets;
 				DEVELOPMENT_TEAM = KPGYDGPJU8;
 				INFOPLIST_FILE = Cobalt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -330,8 +340,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = Cobalt/Asset.xcassets;
 				DEVELOPMENT_TEAM = KPGYDGPJU8;
 				INFOPLIST_FILE = Cobalt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";

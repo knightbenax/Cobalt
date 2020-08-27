@@ -9,19 +9,23 @@
 import Foundation
 import AppKit
 
-/// This controls all the output that would be sent to the receivers
+/// This controls all the output that would be sent to the receivers aka meeting apps. zoom, microsoft teams etc
 class Stream: Object {
     
     var objectID: CMIOObjectID = 0
     let name = "Cobalt"
-    let testImage : NSImage!
-    let cgTestImage : CGImage!
+    var testImage : NSImage!
+    var cgTestImage : CGImage!
     let width = 1280
     let height = 720
     let frameRate = 30
     
     init() {
-        testImage = NSImage.init(named: "testimage")
+        /// get the image in the bundle.
+        let bundle = Bundle(for: type(of: self))
+        testImage = bundle.image(forResource: "testimage")
+        
+        ///convert NSImage to CGImage
         var imageRect = CGRect(x: 0, y: 0, width: testImage.size.width, height: testImage.size.height)
         cgTestImage = testImage.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)
     }
@@ -111,6 +115,8 @@ class Stream: Object {
         return self.queue
     }
 
+    
+    /// frames would be set here, especially as against the clock. But a simple nice image would do for now
     private func createPixelBuffer() -> CVPixelBuffer? {
         let pixelBuffer = CVPixelBuffer.create(size: CGSize(width: width, height: height))
         

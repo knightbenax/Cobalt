@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+/// helper extenstion to create the Pixel Buffer and achieving the locking for drawing to the buffer
 extension CVPixelBuffer {
     static func create(size: CGSize) -> CVPixelBuffer? {
         var pixelBuffer: CVPixelBuffer?
