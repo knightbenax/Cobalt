@@ -22,5 +22,15 @@
 	<string>Copyright © 2020 Bezaleel Ashefor. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>0FEE272B-F42C-4F29-896F-7A1FEABA2CA8</key>
+		<string>98105BBE-868E-459A-96E2-501B6766FBE3</string>
+	</dict>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>98105BBE-868E-459A-96E2-501B6766FBE3</key>
+		<string>cobaltMain</string>
+	</dict>
 </dict>
 </plist>

@@ -6,9 +6,35 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EF530E8B24F7C1FF00D3EC89 /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF530E8A24F7C1FF00D3EC89 /* CoreMediaIO.framework */; };
+		EF530E8E24F7C2F000D3EC89 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E8D24F7C2F000D3EC89 /* Main.swift */; };
+		EF530E9124F7C53700D3EC89 /* PluginInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9024F7C53700D3EC89 /* PluginInterface.swift */; };
+		EF530E9324F7C5E200D3EC89 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9224F7C5E200D3EC89 /* Device.swift */; };
+		EF530E9524F7C61D00D3EC89 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9424F7C61D00D3EC89 /* Object.swift */; };
+		EF530E9724F7C63B00D3EC89 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9624F7C63B00D3EC89 /* Property.swift */; };
+		EF530E9A24F7C85600D3EC89 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9924F7C85600D3EC89 /* Plugin.swift */; };
+		EF530E9C24F7C88400D3EC89 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9B24F7C88400D3EC89 /* Stream.swift */; };
+		EF530E9F24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530E9E24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift */; };
+		EF530EA224F7CA4E00D3EC89 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF530EA124F7CA4E00D3EC89 /* Log.swift */; };
+		EF530EA424F7CAD600D3EC89 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF530EA324F7CAD600D3EC89 /* Asset.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		EF530E8024F7C1D500D3EC89 /* Cobalt.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cobalt.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF530E8324F7C1D500D3EC89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF530E8A24F7C1FF00D3EC89 /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
+		EF530E8C24F7C2F000D3EC89 /* Cobalt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cobalt-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF530E8D24F7C2F000D3EC89 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		EF530E9024F7C53700D3EC89 /* PluginInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginInterface.swift; sourceTree = "<group>"; };
+		EF530E9224F7C5E200D3EC89 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		EF530E9424F7C61D00D3EC89 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		EF530E9624F7C63B00D3EC89 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		EF530E9924F7C85600D3EC89 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		EF530E9B24F7C88400D3EC89 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		EF530E9E24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Create.swift"; sourceTree = "<group>"; };
+		EF530EA124F7CA4E00D3EC89 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		EF530EA324F7CAD600D3EC89 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -16,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF530E8B24F7C1FF00D3EC89 /* CoreMediaIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27,6 +54,7 @@
 			children = (
 				EF530E8224F7C1D500D3EC89 /* Cobalt */,
 				EF530E8124F7C1D500D3EC89 /* Products */,
+				EF530E8924F7C1FF00D3EC89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,9 +69,44 @@
 		EF530E8224F7C1D500D3EC89 /* Cobalt */ = {
 			isa = PBXGroup;
 			children = (
+				EF530E9D24F7C9C500D3EC89 /* Extensions */,
+				EF530E8F24F7C30100D3EC89 /* Util */,
 				EF530E8324F7C1D500D3EC89 /* Info.plist */,
+				EF530E8D24F7C2F000D3EC89 /* Main.swift */,
+				EF530E9024F7C53700D3EC89 /* PluginInterface.swift */,
+				EF530E9924F7C85600D3EC89 /* Plugin.swift */,
+				EF530E8C24F7C2F000D3EC89 /* Cobalt-Bridging-Header.h */,
+				EF530EA324F7CAD600D3EC89 /* Asset.xcassets */,
 			);
 			path = Cobalt;
+			sourceTree = "<group>";
+		};
+		EF530E8924F7C1FF00D3EC89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF530E8A24F7C1FF00D3EC89 /* CoreMediaIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF530E8F24F7C30100D3EC89 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EF530E9224F7C5E200D3EC89 /* Device.swift */,
+				EF530E9424F7C61D00D3EC89 /* Object.swift */,
+				EF530E9624F7C63B00D3EC89 /* Property.swift */,
+				EF530E9B24F7C88400D3EC89 /* Stream.swift */,
+				EF530EA124F7CA4E00D3EC89 /* Log.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EF530E9D24F7C9C500D3EC89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF530E9E24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +140,7 @@
 				TargetAttributes = {
 					EF530E7F24F7C1D500D3EC89 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -103,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF530EA424F7CAD600D3EC89 /* Asset.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF530E9A24F7C85600D3EC89 /* Plugin.swift in Sources */,
+				EF530E9724F7C63B00D3EC89 /* Property.swift in Sources */,
+				EF530EA224F7CA4E00D3EC89 /* Log.swift in Sources */,
+				EF530E9324F7C5E200D3EC89 /* Device.swift in Sources */,
+				EF530E9124F7C53700D3EC89 /* PluginInterface.swift in Sources */,
+				EF530E9524F7C61D00D3EC89 /* Object.swift in Sources */,
+				EF530E9F24F7C9F800D3EC89 /* CVPixelBuffer+Create.swift in Sources */,
+				EF530E8E24F7C2F000D3EC89 /* Main.swift in Sources */,
+				EF530E9C24F7C88400D3EC89 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,14 +305,23 @@
 		EF530E8724F7C1D500D3EC89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KPGYDGPJU8;
 				INFOPLIST_FILE = Cobalt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.cobaltosx.Cobalt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Cobalt/Cobalt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
@@ -246,14 +329,22 @@
 		EF530E8824F7C1D500D3EC89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KPGYDGPJU8;
 				INFOPLIST_FILE = Cobalt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.cobaltosx.Cobalt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Cobalt/Cobalt-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Release;
