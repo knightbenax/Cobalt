@@ -15,19 +15,21 @@ class Stream: Object {
     var objectID: CMIOObjectID = 0
     let name = "Cobalt"
     var testImage : NSImage!
-    var cgTestImage : CGImage!
+    var cgTestImage : CGImage!, tempTestImage : CGImage!
     let width = 1280
     let height = 720
     let frameRate = 30
+    let windowID = -1
     
     init() {
         /// get the image in the bundle.
         let bundle = Bundle(for: type(of: self))
         testImage = bundle.image(forResource: "testimage")
-        
+        startPolling()
         ///convert NSImage to CGImage
         var imageRect = CGRect(x: 0, y: 0, width: testImage.size.width, height: testImage.size.height)
         cgTestImage = testImage.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)
+        tempTestImage = cgTestImage
     }
 
     private var sequenceNumber: UInt64 = 0
@@ -54,7 +56,7 @@ class Stream: Object {
 
         let error = CMIOStreamClockCreate(
             kCFAllocatorDefault,
-            "Cobalt clock" as CFString,
+            "Midgard clock" as CFString,
             Unmanaged.passUnretained(self).toOpaque(),
             CMTimeMake(value: 1, timescale: 10),
             100, 10,
@@ -114,12 +116,40 @@ class Stream: Object {
         self.queueAlteredRefCon = queueAlteredRefCon
         return self.queue
     }
-
     
+    private let session = URLSession(configuration: .default)
+    private var settings = [String: Any]()
+    
+    
+    //this would get the WindowID of the rendering window
+    func startPolling(){
+        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            let request = URLRequest(url: URL(string: "http://127.0.0.1:34000/settings")!)
+            self.session.dataTask(with: request) { (data, res, _) in
+                if let data = data, let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    self.settings = jsonObject
+                }
+            }.resume()
+        }
+        timer.fire()
+    }
+
     /// frames would be set here, especially as against the clock. But a simple nice image would do for now
     private func createPixelBuffer() -> CVPixelBuffer? {
         let pixelBuffer = CVPixelBuffer.create(size: CGSize(width: width, height: height))
         
+        if let windowID = self.settings["windowID"] as? Int{
+            //let info = CGWindowListCopyWindowInfo(.optionIncludingWindow, CGWindowID(windowID))
+            //print(info)
+            if let windowImage = CGWindowListCreateImage(.null, .optionIncludingWindow, CGWindowID(windowID), [.bestResolution, .boundsIgnoreFraming]) {
+                cgTestImage = windowImage
+            } else {
+                cgTestImage = tempTestImage
+            }
+        } else {
+            //the rendering app has been closed. Return to default
+            cgTestImage = tempTestImage
+        }
         pixelBuffer?.modifyWithContext { [width, height] context in
             context.draw(cgTestImage, in: CGRect(x: 0, y: 0, width: width, height: height))
         }
